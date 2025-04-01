@@ -18,26 +18,26 @@
 
         .clock-container {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 20px;
             width: 100%;
             max-width: 1200px;
             box-sizing: border-box;
-            white-space: nowrap;
         }
 
         .time {
-            font-size: clamp(2rem, 10vw, 18rem);
+            font-size: clamp(2rem, 15vw, 18rem);
             font-weight: bold;
             color: black;
-            margin-right: 10px;
+            text-align: center;
         }
 
         .date {
-            font-size: clamp(1rem, 5vw, 9rem);
+            font-size: clamp(1rem, 7.5vw, 9rem);
             color: #666;
+            text-align: center;
         }
 
         @media (max-width: 480px) {
@@ -45,11 +45,10 @@
                 padding: 10px;
             }
             .time {
-                font-size: clamp(1rem, 8vw, 12rem);
-                margin-right: 5px;
+                font-size: clamp(1.5rem, 12vw, 12rem);
             }
             .date {
-                font-size: clamp(0.75rem, 4vw, 6rem);
+                font-size: clamp(0.75rem, 6vw, 6rem);
             }
         }
     </style>
