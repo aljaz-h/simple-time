@@ -17,25 +17,27 @@
         }
 
         .clock-container {
-            text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
             width: 100%;
             max-width: 1200px;
             box-sizing: border-box;
+            white-space: nowrap;
         }
 
         .time {
-            font-size: clamp(4rem, 20vw, 18rem);
+            font-size: clamp(2rem, 10vw, 18rem);
             font-weight: bold;
             color: black;
-            margin-bottom: 5px;
-            line-height: 1;
+            margin-right: 10px;
         }
 
         .date {
-            font-size: clamp(2rem, 11vw, 9rem);
+            font-size: clamp(1rem, 5vw, 9rem);
             color: #666;
-            line-height: 1.2;
         }
 
         @media (max-width: 480px) {
@@ -43,10 +45,11 @@
                 padding: 10px;
             }
             .time {
-                font-size: clamp(2.5rem, 18vw, 12rem);
+                font-size: clamp(1rem, 8vw, 12rem);
+                margin-right: 5px;
             }
             .date {
-                font-size: clamp(1.5rem, 9vw, 6rem);
+                font-size: clamp(0.75rem, 4vw, 6rem);
             }
         }
     </style>
