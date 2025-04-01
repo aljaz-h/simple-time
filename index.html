@@ -34,32 +34,11 @@
             text-align: center;
         }
 
-        .date-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            text-align: center;
-        }
-
         .date {
             font-size: clamp(1rem, 7.5vw, 9rem);
             color: #666;
-        }
-
-        .year {
-            font-size: clamp(1rem, 7.5vw, 9rem);
-            color: #666;
-            margin-left: 5px;
-        }
-
-        @media (max-width: 600px) {
-            .date-container {
-                flex-direction: column;
-            }
-            .year {
-                margin-left: 0;
-                margin-top: 5px;
-            }
+            text-align: center;
+            white-space: nowrap;
         }
 
         @media (max-width: 480px) {
@@ -72,19 +51,13 @@
             .date {
                 font-size: clamp(0.75rem, 6vw, 6rem);
             }
-            .year {
-                font-size: clamp(0.75rem, 6vw, 6rem);
-            }
         }
     </style>
 </head>
 <body>
     <div class="clock-container">
         <div class="time" id="time"></div>
-        <div class="date-container">
-            <div class="date" id="date"></div>
-            <div class="year" id="year"></div>
-        </div>
+        <div class="date" id="date"></div>
     </div>
 
     <script>
@@ -96,17 +69,16 @@
             const seconds = now.getSeconds().toString().padStart(2, '0');
             const timeString = `${hours}:${minutes}:${seconds}`;
             
-            const dateOptions = { 
+            const options = { 
                 weekday: 'long', 
+                day: 'numeric', 
                 month: 'long', 
-                day: 'numeric' 
+                year: 'numeric' 
             };
-            const dateString = now.toLocaleDateString('sl-SI', dateOptions);
-            const yearString = now.getFullYear();
+            const dateString = now.toLocaleDateString('sl-SI', options);
 
             document.getElementById('time').textContent = timeString;
             document.getElementById('date').textContent = dateString;
-            document.getElementById('year').textContent = yearString;
         }
 
         updateClock();
