@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            min-height: 50vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,25 +21,24 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
             width: 100%;
             max-width: 1200px;
             box-sizing: border-box;
         }
 
         .time {
-            font-size: clamp(4rem, 17vw, 20rem);
+            font-size: clamp(10rem, 23vw, 26rem);
             font-weight: bold;
             color: black;
             text-align: center;
         }
 
-        .date {
+        /*.date {
             font-size: clamp(1rem, 7.5vw, 9rem);
             color: #666;
             text-align: center;
             white-space: nowrap;
-        }
+        }*/
 
         @media (max-width: 480px) {
             .clock-container {
@@ -57,7 +56,6 @@
 <body>
     <div class="clock-container">
         <div class="time" id="time"></div>
-        <div class="date" id="date"></div>
     </div>
 
     <script>
@@ -68,17 +66,17 @@
             const minutes = now.getMinutes().toString().padStart(2, '0');
             const seconds = now.getSeconds().toString().padStart(2, '0');
             const timeString = `${hours}:${minutes}:${seconds}`;
-            
-            const options = { 
+
+            /*const options = { 
                 weekday: 'long', 
                 day: 'numeric', 
                 month: 'long', 
                 year: 'numeric' 
             };
-            const dateString = now.toLocaleDateString('sl-SI', options);
+            const dateString = now.toLocaleDateString('sl-SI', options);*/
 
             document.getElementById('time').textContent = timeString;
-            document.getElementById('date').textContent = dateString;
+            /*document.getElementById('date').textContent = dateString;*/
         }
 
         updateClock();
